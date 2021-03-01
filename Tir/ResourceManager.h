@@ -11,6 +11,7 @@
 #include "Sprite.h"
 #include "Background.h"
 #include "ParticleGenerator.h"
+#include "AnimatedBackground.h"
 
 class ResourceManager {
 public:
@@ -57,14 +58,22 @@ public:
 	static std::shared_ptr<Buffer> getBuffer(const std::string& BufferName);
 
 	//создает спрайт
-	static std::shared_ptr<Sprite> createSprite(const std::string& spriteName, const std::string& shaderProgramName, const std::string& textureName);
+	static std::shared_ptr<Sprite> createSprite(const std::string& spriteName, const std::string& textureName);
+	static std::shared_ptr<Sprite> createSprite(const std::string& spriteName, std::shared_ptr<Texture2D> texture);
 	//возвращает спрайт по его имени
 	static std::shared_ptr<Sprite> getSprite(const std::string& spriteName);
 
 	//создает фон
 	static std::shared_ptr<Background> createBackground(const std::string& backgroundName, const std::string& textureName);
+	static std::shared_ptr<Background> createBackground(const std::string& backgroundName, std::shared_ptr<Texture2D> texture);
 	//возвращает фон по имени
 	static std::shared_ptr<Background> getBackground(const std::string& backgroundName);
+
+	//создает анимированный фон
+	static std::shared_ptr<AnimatedBackground> createAnimatedBackground(const std::string& animatedBackgroundName, const std::string& backgroundName, const std::string& sprite1Name, const std::string& sprite2Name);
+	static std::shared_ptr<AnimatedBackground> createAnimatedBackground(const std::string& animatedBackgroundName, std::shared_ptr<Background> background, std::shared_ptr<Sprite> sprite1, std::shared_ptr<Sprite> sprite2);
+	//возвращает анимированный  фон по имени
+	static std::shared_ptr<AnimatedBackground> getAnimatedBackground(const std::string& animatedBackgroundName);
 
 	//создание генератора частиц
 	static std::shared_ptr<ParticleGenerator> createParticleGenerator(const std::string& particleGeneratorName, const std::string& textureName, const unsigned int& amount);
@@ -79,6 +88,7 @@ private:
 	static std::map<std::string, std::shared_ptr<Sprite>> spriteMap;
 	static std::map<std::string, std::shared_ptr<Background>> backgroundMap;
 	static std::map<std::string, std::shared_ptr<ParticleGenerator>> particleGeneratorMap;
+	static std::map<std::string, std::shared_ptr<AnimatedBackground>> animatedBackgroundMap;
 	static std::string exePath;
 
 };

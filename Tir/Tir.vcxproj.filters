@@ -46,6 +46,9 @@
     <Filter Include="Render engine\Buffer">
       <UniqueIdentifier>{56c8e23e-7de0-49b9-bcea-7fb5bf9ae082}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Animated background">
+      <UniqueIdentifier>{cab2e0db-acc8-433a-a0f3-44520d79fc17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -84,6 +87,9 @@
     <ClCompile Include="Buffer.cpp">
       <Filter>Render engine\Buffer</Filter>
     </ClCompile>
+    <ClCompile Include="AnimatedBackground.cpp">
+      <Filter>Game\Animated background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderProgram.h">
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Buffer.h">
       <Filter>Render engine\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedBackground.h">
+      <Filter>Game\Animated background</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

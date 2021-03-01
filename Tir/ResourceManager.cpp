@@ -12,6 +12,7 @@ std::map<std::string, std::shared_ptr<Buffer>> ResourceManager::bufferMap;
 std::map<std::string, std::shared_ptr<Sprite>> ResourceManager::spriteMap;
 std::map<std::string, std::shared_ptr<Background>> ResourceManager::backgroundMap;
 std::map<std::string, std::shared_ptr<ParticleGenerator>> ResourceManager::particleGeneratorMap;
+std::map<std::string, std::shared_ptr<AnimatedBackground>> ResourceManager::animatedBackgroundMap;
 std::string ResourceManager::exePath;
 
 void ResourceManager::setExecutablePath(const std::string& executablePath) {
@@ -119,15 +120,19 @@ std::shared_ptr<Buffer> ResourceManager::getBuffer(const std::string& BufferName
 	return nullptr;
 }
 
-std::shared_ptr<Sprite> ResourceManager::createSprite(const std::string& spriteName, const std::string& shaderProgramName, const std::string& textureName) {
-	return spriteMap.emplace(spriteName, std::make_shared<Sprite>(getShaderProgram(shaderProgramName), getTexture2D(textureName))).first->second;
+std::shared_ptr<Sprite> ResourceManager::createSprite(const std::string& spriteName, const std::string& textureName) {
+	return spriteMap.emplace(spriteName, std::make_shared<Sprite>(getShaderProgram("texture with model matrix shader program"), getTexture2D(textureName), getBuffer("buffer"))).first->second;
+}
+
+std::shared_ptr<Sprite> ResourceManager::createSprite(const std::string& spriteName, std::shared_ptr<Texture2D> texture) {
+			return spriteMap.emplace(spriteName, std::make_shared<Sprite>(getShaderProgram("texture with model matrix shader program"), texture, getBuffer("buffer"))).first->second;
 }
 
 std::shared_ptr<Sprite> ResourceManager::getSprite(const std::string& spriteName) {
 	std::map<const std::string, std::shared_ptr<Sprite>>::const_iterator iter = spriteMap.find(spriteName);
 	if (iter != spriteMap.end()) return iter->second;
 
-	std::cerr << "RESOURCE_MANAGER can't find the texture: " << spriteName << std::endl;
+	std::cerr << "Resource manager can't find the texture: " << spriteName << std::endl;
 	return nullptr;
 }
 
@@ -135,11 +140,31 @@ std::shared_ptr<Background> ResourceManager::createBackground(const std::string&
 	return backgroundMap.emplace(backgroundName, std::make_shared<Background>(getTexture2D(textureName), getShaderProgram("texture shader program"), getBuffer("buffer"))).first->second;
 }
 
+std::shared_ptr<Background> ResourceManager::createBackground(const std::string& backgroundName, std::shared_ptr<Texture2D> texture) {
+	return backgroundMap.emplace(backgroundName, std::make_shared<Background>(texture, getShaderProgram("texture shader program"), getBuffer("buffer"))).first->second;
+}
+
 std::shared_ptr<Background> ResourceManager::getBackground(const std::string& backgroundName) {
 	std::map<const std::string, std::shared_ptr<Background>>::const_iterator iter = backgroundMap.find(backgroundName);
 	if (iter != backgroundMap.end()) return iter->second;
 
 	std::cerr << "Resource manager can't find the background: " << backgroundName << std::endl;
+	return nullptr;
+}
+
+std::shared_ptr<AnimatedBackground> ResourceManager::createAnimatedBackground(const std::string& animatedBackgroundName, const std::string& backgroundName, const std::string& sprite1Name, const std::string& sprite2Name) {
+	return animatedBackgroundMap.emplace(animatedBackgroundName, std::make_shared<AnimatedBackground>(getBackground(backgroundName), getSprite(sprite1Name), getSprite(sprite2Name))).first->second;
+}
+
+std::shared_ptr<AnimatedBackground> ResourceManager::createAnimatedBackground(const std::string& animatedBackgroundName, std::shared_ptr<Background> background, std::shared_ptr<Sprite> sprite1, std::shared_ptr<Sprite> sprite2) {
+	return animatedBackgroundMap.emplace(animatedBackgroundName, std::make_shared<AnimatedBackground>(background, sprite1, sprite2)).first->second;
+}
+
+std::shared_ptr<AnimatedBackground> ResourceManager::getAnimatedBackground(const std::string& animatedBackgroundName) {
+	std::map<const std::string, std::shared_ptr<AnimatedBackground>>::const_iterator it = animatedBackgroundMap.find(animatedBackgroundName);
+	if (it != animatedBackgroundMap.end()) return it->second;
+
+	std::cerr << "Resource manager can't find the animated background: " << animatedBackgroundName << std::endl;
 	return nullptr;
 }
 

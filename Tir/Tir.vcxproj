@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedBackground.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Texture2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedBackground.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="Game.h" />
