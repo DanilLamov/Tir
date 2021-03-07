@@ -1,0 +1,7 @@
+﻿LINK : warning LNK4098: библиотека по умолчанию "MSVCRTD" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
+  Создание кода
+  0 of 1222 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  Tir.vcxproj -> C:\Users\Dlamo\OneDrive\Documents\Программирование\Мои приложения\Tir\x64\Release\Tir.exe

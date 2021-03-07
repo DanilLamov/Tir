@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Render engine">
+      <UniqueIdentifier>{a742cb1e-a01f-473f-9e66-151beb4088fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Shader program">
+      <UniqueIdentifier>{bfbd7d85-f455-432d-aca2-074d9cfc2412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource manager">
+      <UniqueIdentifier>{fca2fb05-301a-48c0-9b59-bb5033002e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Texture">
+      <UniqueIdentifier>{bf08a796-9d6f-4d00-8128-8062598b13f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Sprite">
+      <UniqueIdentifier>{32121b02-bf5e-4566-92d5-3455af2387ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stb_image">
+      <UniqueIdentifier>{4f629cf5-2c85-463a-a314-cddc68cb3b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Background">
+      <UniqueIdentifier>{9dfa5278-aaf2-4ce1-9b42-d4efd714e39c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Particle generator">
+      <UniqueIdentifier>{db793897-c5d8-4c2b-935a-2269fdde1513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Particle generator\Particle">
+      <UniqueIdentifier>{7255fced-813e-46da-9b8b-266828948212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{b9eb31c8-87b3-46ad-9bd2-3737da390042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render engine\Buffer">
+      <UniqueIdentifier>{56c8e23e-7de0-49b9-bcea-7fb5bf9ae082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Animated background">
+      <UniqueIdentifier>{cab2e0db-acc8-433a-a0f3-44520d79fc17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgram.cpp">
+      <Filter>Render engine\Shader program</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Resource manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture2D.cpp">
+      <Filter>Render engine\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Render engine\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Render engine\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Render engine\Particle generator\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGenerator.cpp">
+      <Filter>Render engine\Particle generator</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Render engine\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedBackground.cpp">
+      <Filter>Game\Animated background</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Render engine\Shader program</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Resource manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture2D.h">
+      <Filter>Render engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Render engine\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Render engine\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Render engine\Particle generator\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGenerator.h">
+      <Filter>Render engine\Particle generator</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Render engine\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedBackground.h">
+      <Filter>Game\Animated background</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

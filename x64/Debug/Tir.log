@@ -1,0 +1,7 @@
+﻿  AnimatedBackground.cpp
+  Game.cpp
+  ResourceManager.cpp
+  main.cpp
+C:\Users\Dlamo\OneDrive\Documents\Программирование\Мои приложения\Tir\Tir\main.cpp(72,28): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Создание кода...
+  Tir.vcxproj -> C:\Users\Dlamo\OneDrive\Documents\Программирование\Мои приложения\Tir\x64\Debug\Tir.exe
